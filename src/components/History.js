@@ -8,6 +8,7 @@ const History = (props) => {
     <div>
       <label>{props?.islemleriKaydet[0]?.IslemAciklama}</label>
       <label>{props?.islemleriKaydet[0]?.moneyInput}</label>
+      <label>1231312321</label>
     </div>
   );
 };

@@ -50,7 +50,6 @@ function App() {
         />
         
       </div>
-      <div className="History">{activities}</div>
       <History islemleriKaydet={islemleriKaydet}></History>
     </div>
   );

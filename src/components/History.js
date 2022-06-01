@@ -1,15 +1,18 @@
-import React from "react";
-import ExpensesCards from "./ExpensesCards";
+import React, { Component } from "react";
+import { Card } from "react-bootstrap";
+import "./History.css"
 
-const History = (props) => {
-  
-
-  return (
-    <div>
-      <label>{props?.islemleriKaydet[0]?.IslemAciklama}</label>
-      <label>{props?.islemleriKaydet[0]?.moneyInput}</label>
-      <label>1231312321</label>
-    </div>
-  );
-};
-export default History;
+export default class History extends Component {
+  render() {
+    return (
+      <div className="History">
+        {this.props.islemleriKaydet.map((islem) => (
+          <Card className="cardProcess">
+            <Card.Body className="cardCategory">{islem.IslemAciklama}</Card.Body>
+            <Card.Body className="cardMoney">{islem.moneyInput}</Card.Body>
+          </Card>
+        ))}
+      </div>
+    );
+  }
+}

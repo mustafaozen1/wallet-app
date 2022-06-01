@@ -27,13 +27,14 @@ const Money = (props) => {
   const processSave = (event) => {
     setProcess(event.target.value);
   };
-
+  let processId = 0
   const increaseMoney = () => {
+    processId = processId + 1
     props.setBalance(props.balance + parseInt(moneyInput));
     setIncShow(false);
     props.setIslemeriKaydet([
       ...props.islemleriKaydet,
-      { moneyInput, IslemAciklama },
+      { processId, moneyInput, IslemAciklama },
     ]);
   };
   const decreaseMoney = () => {

@@ -7,7 +7,7 @@ function Sidebar() {
     <div className="Sidebar">
       <div className="Profile">
         <img id="ProfilePhoto" src={require("../img/user.png")} />
-        <h2 className="ProfileName">Osman Özüdoğru</h2>
+        <h2 className="ProfileName">İsmail Akman</h2>
       </div>
 
       <ul className="SidebarList">

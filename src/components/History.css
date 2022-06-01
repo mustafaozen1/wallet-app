@@ -1,17 +1,69 @@
 .History {
-    width: 30%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 5px;
+  width: 35%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: first baseline;
+  margin: 20px;
 }
 
-.cards {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.cardHistoryGreen {
+  flex-direction: row !important;
+  justify-content: space-between;
+  width: 100%;
+  text-align: justify;
+  margin: 5px;
+  color: #14213d !important;
+  background-color: green!important;
 }
-.cardCategory{
+.cardHistoryRed {
+  flex-direction: row !important;
+  justify-content: space-between;
+  width: 100%;
+  text-align: justify;
+  margin: 5px;
+  color: #14213d !important;
+  background-color: red!important;
+}
 
+.cardCategory {
+  margin: 5px;
+  text-align-last: left;
+  width: 50%;
+  font-size: 20px;
+}
+
+.cardMoney {
+  font-size: 20px;
+  margin: 5px;
+  margin-right: 20px;
+
+  text-align-last: right;
+  width: 50%;
+}
+
+.filters {
+  color: #14213d;
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+}
+
+.categoryFilter {
+  width: 50% !important;
+  margin: 2px;
+}
+.historyFilter {
+  width: 50% !important;
+  margin: 2px;
+}
+.textFilter {
+  height: 100%;
+  padding: 5px;
+  font-size: 18px;
+  background-color: #ffffff;
+  border-radius: 2002px;
+}
+.cardDate {
+  width: 250px;
 }

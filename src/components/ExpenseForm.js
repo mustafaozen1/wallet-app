@@ -5,9 +5,7 @@ const ExpenseForm = (props) => {
   return (
     <Form>
       <Form.Select onChange={props.aciklama}>
-        <option selected disabled>
-          Kategori Seçiniz
-        </option>
+        <option value="" hidden>Kategori Seçiniz</option>
         <option value="Market Alışverişi">Market Alışverişi</option>
         <option value="Fatura">Fatura</option>
         <option value="Kira">Kira</option>

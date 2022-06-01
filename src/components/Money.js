@@ -1,4 +1,3 @@
-import { toBeDisabled } from "@testing-library/jest-dom/dist/matchers";
 import React from "react";
 import { useState } from "react";
 import { Modal } from "react-bootstrap";
@@ -7,6 +6,8 @@ import IncomeForm from "./IncomeForm";
 import "./Money.css";
 
 const Money = (props) => {
+  
+
   //Para girişi
   const [moneyInput, setMoneyInput] = useState(0);
   const setMoney = (event) => {
@@ -23,25 +24,47 @@ const Money = (props) => {
   // const [islemleriKaydet,setIslemeriKaydet]=useState(islemler);
   //////////////////////
   //İşlem türü girişi
+  //Time Pick
+  var today = new Date(),
+    date =
+      today.getDate() +
+      "." +
+      (today.getMonth() + 1) +
+      "." +
+      today.getFullYear() + " " + 
+      today.getHours() + ':' + today.getMinutes();
+  //Arttırma Azaltma
+  var processType = "";
+
   const [Process, setProcess] = useState("");
   const processSave = (event) => {
     setProcess(event.target.value);
   };
-  let processId = 0
   const increaseMoney = () => {
-    processId = processId + 1
-    props.setBalance(props.balance + parseInt(moneyInput));
-    setIncShow(false);
-    props.setIslemeriKaydet([
-      ...props.islemleriKaydet,
-      { processId, moneyInput, IslemAciklama },
-    ]);
+    processType = "+";
+    props.setCardColor(true)
+    if (IslemAciklama !== "") {
+      props.setBalance(props.balance + parseInt(moneyInput));
+      setIncShow(false);
+      props.setIslemeriKaydet([
+        ...props.islemleriKaydet,
+        { processType, moneyInput, IslemAciklama, date },
+      ]);
+    }
   };
   const decreaseMoney = () => {
-    if (props.balance - parseInt(moneyInput) >= 0) {
-      props.setBalance(props.balance - parseInt(moneyInput));
+    processType = "-";
+    props.setCardColor(false)
+    if (IslemAciklama !== "") {
+      if (props.balance - parseInt(moneyInput) >= 0) {
+        props.setBalance(props.balance - parseInt(moneyInput));
+      }
+      setDecShow(false);
+      props.setIslemeriKaydet([
+        ...props.islemleriKaydet,
+        { processType, moneyInput, IslemAciklama, date },
+      ]);
     }
-    setDecShow(false);
   };
 
   const [decreaseShow, setDecShow] = useState(false);
@@ -54,7 +77,7 @@ const Money = (props) => {
   return (
     <div className="moneyAll">
       <div className="moneyBottom">
-        <div className="balanceCss">Bakiye = {props.balance}</div>
+        <div className="balanceCss">Bakiye = {props.balance}TL</div>
         <div className="Buttons">
           <button className="button" variant="primary" onClick={incShow}>
             Bakiye Arttır
@@ -96,7 +119,12 @@ const Money = (props) => {
             <Modal.Title>Bakiye Azalt</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <ExpenseForm setMoney={setMoney}></ExpenseForm>
+            <ExpenseForm
+              setMoney={setMoney}
+              IslemAciklama={IslemAciklama}
+              setIslemAciklama={setIslemAciklama}
+              aciklama={aciklama}
+            ></ExpenseForm>
           </Modal.Body>
           <Modal.Footer>
             <button className="button" variant="primary" onClick={CloseDec}>

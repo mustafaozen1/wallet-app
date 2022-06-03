@@ -1,11 +1,13 @@
 import { Form } from "react-bootstrap";
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-const IncomeForm=(props)=> {
+const IncomeForm = (props) => {
   return (
     <Form>
-      <Form.Select  onChange={props.aciklama}>
-      <option value="" hidden>Kategori Seçiniz</option>
+      <Form.Select onChange={props.aciklama}>
+        <option value="" hidden>
+          Kategori Seçiniz
+        </option>
         <option value="Borsa Geliri">Borsa Geliri</option>
         <option value="İş">İş</option>
         <option value="Borç Alacağı">Borç Alacağı</option>
@@ -17,11 +19,9 @@ const IncomeForm=(props)=> {
         onChange={props.setMoney}
         className="mb-3"
       >
-        <Form.Label>Para Miktarını Giriniz.</Form.Label>
-        <Form.Control  type="number" placeholder="Para Girişi" />
+        <Form.Control className="moneyInputForm" type="number" placeholder="Para Girişi Yapınız" />
       </Form.Group>
     </Form>
   );
-
-}
+};
 export default IncomeForm;

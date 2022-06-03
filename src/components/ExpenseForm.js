@@ -18,8 +18,8 @@ const ExpenseForm = (props) => {
         onChange={props.setMoney}
         className="mb-3"
       >
-        <Form.Label>Para Miktarını Giriniz.</Form.Label>
-        <Form.Control type="number" placeholder="Para Girişi" />
+        
+        <Form.Control className="moneyInputForm" type="number" placeholder="Para Girişi" />
       </Form.Group>
     </Form>
   );

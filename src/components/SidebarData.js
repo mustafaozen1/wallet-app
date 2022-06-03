@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faHouse, faWallet, faNewspaper} from '@fortawesome/free-solid-svg-icons'
+import {faHouse, faWallet} from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 
 export const  SidebarData = [
@@ -14,7 +14,11 @@ export const  SidebarData = [
         icon: <FontAwesomeIcon icon= {faWallet} color = "#fca311"></FontAwesomeIcon>,
         link: "/Raporlar"
     },
-    {
+    
+]
+ 
+/*
+{
         tittle: "Son Hareketler",
         icon: <FontAwesomeIcon icon= {faNewspaper} color = "#fca311"></FontAwesomeIcon>,
         link: "/asda"
@@ -29,6 +33,4 @@ export const  SidebarData = [
         icon: <FontAwesomeIcon icon= {faNewspaper} color = "#fca311"></FontAwesomeIcon>,
         link: "/asdasdaddsa"
     }
-]
- 
-
+*/

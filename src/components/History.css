@@ -4,7 +4,17 @@
   display: flex;
   flex-direction: column;
   justify-content: first baseline;
-  margin: 20px;
+}
+.cardsGeneral {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.cardHistory {
+  flex-direction: row !important;
+  justify-content: space-between;
+  width: 100%;
+  text-align: justify;
+  margin: 3px;
 }
 
 .cardHistoryGreen {
@@ -14,22 +24,23 @@
   text-align: justify;
   margin: 5px;
   color: #14213d !important;
-  background-color: green!important;
+  background-color: green !important;
 }
 .cardHistoryRed {
   flex-direction: row !important;
   justify-content: space-between;
   width: 100%;
+
   text-align: justify;
   margin: 5px;
   color: #14213d !important;
-  background-color: red!important;
+  background-color: red !important;
 }
 
 .cardCategory {
   margin: 5px;
   text-align-last: left;
-  width: 50%;
+  width: 70%;
   font-size: 20px;
 }
 
@@ -39,7 +50,7 @@
   margin-right: 20px;
 
   text-align-last: right;
-  width: 50%;
+  width: 30%;
 }
 
 .filters {
@@ -66,4 +77,5 @@
 }
 .cardDate {
   width: 250px;
+  height: 100%;
 }

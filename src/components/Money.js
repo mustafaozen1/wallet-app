@@ -13,11 +13,12 @@ const Money = (props) => {
   const setMoney = (event) => {
     setMoneyInput(event.target.value);
   };
-
+  
   const [IslemAciklama, setIslemAciklama] = useState("");
   const aciklama = (event) => {
     setIslemAciklama(event.target.value);
   };
+ 
 
   ////////////////////////////////////////////////////////
   // const islemler=[]
@@ -35,6 +36,7 @@ const Money = (props) => {
       today.getHours() + ':' + today.getMinutes();
   //Arttırma Azaltma
   var processType = "";
+  let colorType = true;
 
   const [Process, setProcess] = useState("");
   const processSave = (event) => {
@@ -42,18 +44,20 @@ const Money = (props) => {
   };
   const increaseMoney = () => {
     processType = "+";
+    colorType = true;
     props.setCardColor(true)
     if (IslemAciklama !== "") {
       props.setBalance(props.balance + parseInt(moneyInput));
       setIncShow(false);
       props.setIslemeriKaydet([
         ...props.islemleriKaydet,
-        { processType, moneyInput, IslemAciklama, date },
+        {colorType,processType, moneyInput, IslemAciklama, date },
       ]);
     }
   };
   const decreaseMoney = () => {
     processType = "-";
+    colorType = false;
     props.setCardColor(false)
     if (IslemAciklama !== "") {
       if (props.balance - parseInt(moneyInput) >= 0) {
@@ -62,7 +66,7 @@ const Money = (props) => {
       setDecShow(false);
       props.setIslemeriKaydet([
         ...props.islemleriKaydet,
-        { processType, moneyInput, IslemAciklama, date },
+        {colorType,processType, moneyInput, IslemAciklama, date },
       ]);
     }
   };

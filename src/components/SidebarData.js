@@ -4,7 +4,11 @@ import React from 'react'
 
 export const  SidebarData = [
 
-    {
+    
+]
+ 
+/*
+{
         tittle: "Ana Sayfa",
         icon: <FontAwesomeIcon icon= {faHouse} color = "#fca311"></FontAwesomeIcon>,
         link: "/home"
@@ -15,9 +19,6 @@ export const  SidebarData = [
         link: "/Raporlar"
     },
     
-]
- 
-/*
 {
         tittle: "Son Hareketler",
         icon: <FontAwesomeIcon icon= {faNewspaper} color = "#fca311"></FontAwesomeIcon>,

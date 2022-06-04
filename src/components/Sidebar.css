@@ -82,3 +82,18 @@
 .moneyInputForm {
     margin-top: 10px;
 }
+
+
+.loginSidebar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userNameText {
+  color: white;
+  font-size: 20px;
+}
+.logoutButton{
+  background-color: #fca311 !important;
+  color: #14213d !important;
+}

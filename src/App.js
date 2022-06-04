@@ -6,10 +6,9 @@ import Sidebar from "./components/Sidebar";
 import History from "./components/History";
 
 function App() {
+  
   //Users Tanımlama
-  const userList = [];
-  const [users, setUsers] = useState(userList);
-
+  
   //History cards color
   const [cardColor, setCardColor] = useState();
   //bakiye
@@ -19,11 +18,11 @@ function App() {
 
   const islemler = [];
   const [islemleriKaydet, setIslemeriKaydet] = useState(islemler);
-  console.log(islemleriKaydet);
+
   return (
     <div className="App">
       <div className="Sidebar">
-        <Sidebar users={users} setUsers={setUsers}></Sidebar>
+        <Sidebar></Sidebar>
       </div>
       <div className="Money">
         <div className="PieCharts">

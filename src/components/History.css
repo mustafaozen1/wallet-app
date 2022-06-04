@@ -23,8 +23,8 @@
   width: 100%;
   text-align: justify;
   margin: 5px;
-  color: #14213d !important;
-  background-color: green !important;
+  color: #ffffff !important;
+  background-color: rgb(12, 168, 12) !important;
 }
 .cardHistoryRed {
   flex-direction: row !important;
@@ -33,7 +33,7 @@
 
   text-align: justify;
   margin: 5px;
-  color: #14213d !important;
+  color: #ffffff !important;
   background-color: red !important;
 }
 

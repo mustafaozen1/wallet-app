@@ -4,37 +4,25 @@ import { Modal } from "react-bootstrap";
 import ExpenseForm from "./ExpenseForm";
 import IncomeForm from "./IncomeForm";
 import "./Money.css";
+import Login from "./Login.js";
 
 const Money = (props) => {
-  
-
   //Para girişi
   const [moneyInput, setMoneyInput] = useState(0);
   const setMoney = (event) => {
     setMoneyInput(event.target.value);
   };
-  
+
   const [IslemAciklama, setIslemAciklama] = useState("");
   const aciklama = (event) => {
     setIslemAciklama(event.target.value);
   };
- 
 
-  ////////////////////////////////////////////////////////
-  // const islemler=[]
-  // const [islemleriKaydet,setIslemeriKaydet]=useState(islemler);
-  //////////////////////
-  //İşlem türü girişi
-  //Time Pick
-  var today = new Date(),
-    date =
-      today.getDate() +
-      "." +
-      (today.getMonth() + 1) +
-      "." +
-      today.getFullYear() + " " + 
-      today.getHours() + ':' + today.getMinutes();
+  //DATE İŞLEMLERİ
+  let date = new Date().toLocaleString()
+  
   //Arttırma Azaltma
+
   var processType = "";
   let colorType = true;
 
@@ -45,20 +33,20 @@ const Money = (props) => {
   const increaseMoney = () => {
     processType = "+";
     colorType = true;
-    props.setCardColor(true)
+    props.setCardColor(true);
     if (IslemAciklama !== "") {
       props.setBalance(props.balance + parseInt(moneyInput));
       setIncShow(false);
       props.setIslemeriKaydet([
         ...props.islemleriKaydet,
-        {colorType,processType, moneyInput, IslemAciklama, date },
+        { colorType, processType, moneyInput, IslemAciklama, date },
       ]);
     }
   };
   const decreaseMoney = () => {
     processType = "-";
     colorType = false;
-    props.setCardColor(false)
+    props.setCardColor(false);
     if (IslemAciklama !== "") {
       if (props.balance - parseInt(moneyInput) >= 0) {
         props.setBalance(props.balance - parseInt(moneyInput));
@@ -66,7 +54,7 @@ const Money = (props) => {
       setDecShow(false);
       props.setIslemeriKaydet([
         ...props.islemleriKaydet,
-        {colorType,processType, moneyInput, IslemAciklama, date },
+        { colorType, processType, moneyInput, IslemAciklama, date },
       ]);
     }
   };
@@ -80,6 +68,7 @@ const Money = (props) => {
 
   return (
     <div className="moneyAll">
+      <Login className="loginForm"></Login>
       <div className="moneyBottom">
         <div className="balanceCss">Bakiye = {props.balance}TL</div>
         <div className="Buttons">
@@ -102,6 +91,7 @@ const Money = (props) => {
               IslemAciklama={IslemAciklama}
               setIslemAciklama={setIslemAciklama}
               aciklama={aciklama}
+              
             ></IncomeForm>
           </Modal.Body>
           <Modal.Footer>
@@ -128,6 +118,7 @@ const Money = (props) => {
               IslemAciklama={IslemAciklama}
               setIslemAciklama={setIslemAciklama}
               aciklama={aciklama}
+              date={date}
             ></ExpenseForm>
           </Modal.Body>
           <Modal.Footer>

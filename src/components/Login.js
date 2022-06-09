@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import "./Sidebar.css";
-import { SidebarData } from "./SidebarData";
+import "./Login.css"
+
 import { Button, Form } from "react-bootstrap";
 import "./Users";
 import { Users } from "./Users";
 import uniqid from "uniqid";
-import { isVisible } from "@testing-library/user-event/dist/utils";
 
-function Sidebar() {
+function Login() {
   //Kullanıcı Adını Alma
   const [userNameInput, setUserNameInput] = useState("");
   const setUserName = (event) => {
@@ -22,17 +21,14 @@ function Sidebar() {
   //Login Buton Fonksiyonu
   const [loginState, setLoginState] = useState(true);
   const LoginClick = () => {
-    if (
-      userNameInput === "MustafaOzen"
-      
-    ) {
-      if (passwordInput === "12345"){
+    if (userNameInput === "MustafaOzen") {
+      if (passwordInput === "12345") {
         setLoginState(false);
       } else {
-        alert("Girdiğiniz Şifre Hatalıdır.")
+        alert("Girdiğiniz Şifre Hatalıdır.");
       }
     } else {
-      alert("Girdiğiniz Kullanıcı Adı Hatalı")
+      alert("Girdiğiniz Kullanıcı Adı Hatalı");
     }
   };
   const LogoutClick = () => {
@@ -52,10 +48,6 @@ function Sidebar() {
 
   return (
     <div className="Sidebar">
-      <div className="Profile">
-        <img id="ProfilePhoto" src={require("../img/user.png")} />
-        <h2 className="ProfileName"></h2>
-      </div>
       {loginState ? (
         <Form className="loginForm">
           <Form.Group onChange={setUserName} className="mb-3 loginFormInput">
@@ -89,32 +81,13 @@ function Sidebar() {
       {!loginState ? (
         <Form className="loginSidebar">
           <label className="userNameText">{userNameInput}</label>
-          <button 
-          className="button logoutButton"
-          onClick={LogoutClick}>Çıkış Yap</button>
+          <button className="button logoutButton" onClick={LogoutClick}>
+            Çıkış Yap
+          </button>
         </Form>
       ) : null}
-
-      <ul className="SidebarList">
-        {SidebarData.map((val, key) => {
-          return (
-            <li
-              className="row"
-              id={window.location.pathname === val.link ? "active" : ""}
-              key={key}
-              onClick={() => {
-                window.location.pathname = val.link;
-              }}
-            >
-              {" "}
-              <div id="icon">{val.icon}</div>{" "}
-              <div id="tittle">{val.tittle}</div>
-            </li>
-          );
-        })}
-      </ul>
     </div>
   );
 }
 
-export default Sidebar;
+export default Login;

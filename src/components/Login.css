@@ -1,7 +1,7 @@
 .Sidebar {
   width: 250px;
   height: 100%;
-  background-color: #14213d;
+  
   font-family: "JetBrains Mono", monospace;
 }
 
@@ -53,47 +53,3 @@
   margin-top: 20px;
 }
 
-.ProfileName {
-  color: #e5e5e5;
-  font-size: 20px;
-  margin-top: 20px;
-}
-
-.loginForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center !important;
-  width: 100%;
-}
-.loginFormInput {
-  width: 88%;
-}
-
-.loginButton {
-  background-color: #fca311 !important;
-  color: #14213d !important;
-}
-
-.registerButton {
-  background-color: #fca311 !important;
-  color: #14213d !important;
-}
-
-.moneyInputForm {
-    margin-top: 10px;
-}
-
-
-.loginSidebar{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.userNameText {
-  color: white;
-  font-size: 20px;
-}
-.logoutButton{
-  background-color: #fca311 !important;
-  color: #14213d !important;
-}
